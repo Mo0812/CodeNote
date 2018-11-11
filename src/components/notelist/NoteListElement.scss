@@ -1,0 +1,26 @@
+@import "../../variables.scss";
+
+.note-list-element {
+    @extend %not-selectable;
+    border-bottom: 1px solid $border-color;
+    height: 4rem;
+    padding: $box-padding;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $box-background-highlight;
+    }
+
+    & > .title {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    & > .excerpt {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}

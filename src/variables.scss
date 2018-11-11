@@ -1,0 +1,16 @@
+@import "~@blueprintjs/core/lib/scss/variables";
+
+$border-color: #394b59;
+$background-color: $pt-dark-app-background-color;
+$box-background: $background-color;
+$box-background-highlight: #0e5a8a;
+
+$box-padding: 15px;
+
+%not-selectable {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}

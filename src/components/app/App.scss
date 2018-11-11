@@ -1,0 +1,27 @@
+@import "../../variables.scss";
+
+.bp3-dark {
+    background-color: $background-color;
+}
+
+.app {
+    display: grid;
+    grid-template-rows: 50px 1fr 20px;
+    grid-template-columns: 1fr;
+    height: 100vh;
+}
+
+.header {
+    grid-column-start: span 1;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.note-container {
+    grid-column-start: span 1;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+    max-height: 100%;
+    overflow: scroll;
+}
