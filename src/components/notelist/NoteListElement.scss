@@ -1,5 +1,13 @@
 @import "../../variables.scss";
 
+.note-list-header {
+    overflow: auto;
+}
+
+.note-list {
+    overflow: auto;
+}
+
 .note-list-element {
     @extend %not-selectable;
     border-bottom: 1px solid $border-color;

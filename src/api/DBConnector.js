@@ -53,4 +53,7 @@ class DBConnector {
     }
 }
 
-export default DBConnector;
+const instance = new DBConnector();
+Object.freeze(instance);
+
+export default instance;

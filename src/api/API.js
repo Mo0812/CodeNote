@@ -1,8 +1,10 @@
 import DBConnector from "./DBConnector";
+
+const shortid = window.require("shortid");
+
 class API {
     constructor() {
-        const dbConnector = new DBConnector();
-        this.db = dbConnector.getInstance();
+        this.db = DBConnector.getInstance();
     }
 
     getNotes() {
@@ -22,6 +24,16 @@ class API {
             .find({ id: id })
             .assign({ content: content })
             .write();
+    }
+
+    addNote() {
+        const newId = shortid.generate();
+        this.db
+            .get("notes")
+            .push({ id: newId, title: "New Note", content: "" })
+            .write();
+
+        return newId;
     }
 }
 
