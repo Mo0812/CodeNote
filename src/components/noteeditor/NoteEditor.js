@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { H1, EditableText, Callout, Code } from "@blueprintjs/core";
+import { H1, EditableText, Callout } from "@blueprintjs/core";
 import API from "../../api/API";
 import NoteMDEditor from "./NoteMDEditor";
 

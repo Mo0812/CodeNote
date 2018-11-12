@@ -1,26 +1,30 @@
 {
-  "notes": [
-    {
-      "id": "p_VkNAs3l",
-      "title": "Notiz 1",
-      "content": "# Test 1\nLorem ipsum dolor sit amet\n* consetetur sadipscing\n* elitr, sed diam nonumy\n* eirmod tempor invidunt\nut labore et dolore\nmagna aliquyam erat\n**sed diam voluptua.**\n\nIch bin so froh das alles *gut* funktioniert! Live **Updates** sind super cool <3\n\n* Test\n* Lalala\n* [Links kann es auch geben](http://google.de)"
-    },
-    {
-      "id": "RKWBrYXIHh",
-      "title": "Notiz 2",
-      "content": "# Test 2\nLorem ipsum dolor sit amet\n* consetetur sadipscing\n* elitr, sed diam nonumy \n* eirmod tempor invidunt\nut labore et dolore\nmagna aliquyam erat\n**sed diam voluptua.**\n\nIch bin so froh das alles *gut* funktioniert! Live **Updates** sind super cool <3\n\n* Test\n* Lalala\n* [Links kann es auch geben](http://google.de)",
-      "attribute": "Notiz 2abcdcde2111"
-    },
-    {
-      "id": "kPlEUXi5Em",
-      "title": "Notiz 3",
-      "content": "# Test 3\nLorem ipsum dolor sit amet\n* consetetur sadipscing\n* elitr, sed diam nonumy\n* eirmod tempor invidunt\nut labore et dolore\nmagna aliquyam erat\n**sed diam voluptua.**"
-    },
-    {
-      "id": "MMG0D4Owa",
-      "title": "New Note",
-      "content": "Was geht ab?"
+    "notes": [
+        {
+            "id": "p_VkNAs3l",
+            "title": "Notiz 1",
+            "content": "# Test 1\nLorem ipsum dolor sit amet\n* consetetur sadipscing\n* elitr, sed diam nonumy\n* eirmod tempor invidunt\nut labore et dolore\nmagna aliquyam erat\n**sed diam voluptua.**\n\nIch bin so froh das alles *gut* funktioniert! Live **Updates** sind super cool <3\n\n* Test\n* Lalala\n* [Links kann es auch geben](http://google.de)"
+        },
+        {
+            "id": "RKWBrYXIHh",
+            "title": "Notiz 2",
+            "content": "# Test 2\nLorem ipsum dolor sit amet\n* consetetur sadipscing\n* elitr, sed diam nonumy \n* eirmod tempor invidunt\nut labore et dolore\nmagna aliquyam erat\n**sed diam voluptua.**\n\nIch bin so froh das alles *gut* funktioniert! Live **Updates** sind super cool <3\n\n* Test\n* Lalala\n* [Links kann es auch geben](http://google.de)",
+            "attribute": "Notiz 2abcdcde2111"
+        },
+        {
+            "id": "kPlEUXi5Em",
+            "title": "Notiz 3",
+            "content": "# Test 3\nLorem ipsum dolor sit amet\n* consetetur sadipscing\n* elitr, sed diam nonumy\n* eirmod tempor invidunt\nut labore et dolore\nmagna aliquyam erat\n**sed diam voluptua.**"
+        },
+        {
+            "id": "MMG0D4Owa",
+            "title": "New Note",
+            "content": "Was geht ab?"
+        }
+    ],
+    "user": {},
+    "settings": {},
+    "user_settings": {
+        "lastOpenNote": "p_VkNAs3l"
     }
-  ],
-  "user": {}
 }

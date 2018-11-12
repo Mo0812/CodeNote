@@ -34,7 +34,9 @@ class DBConnector {
                             "# Test 3\nLorem ipsum dolor sit amet\n*consetetur sadipscing\n*elitr, sed diam nonumy\n*eirmod tempor invidunt\nut labore et dolore\nmagna aliquyam erat\n**sed diam voluptua.**"
                     }
                 ],
-                user: {}
+                user: {},
+                user_settings: {},
+                settings: {}
             })
             .write();
     }

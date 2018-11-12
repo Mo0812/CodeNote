@@ -37,6 +37,20 @@ class API {
 
         return newId;
     }
+
+    updateSettings(name, value, domain = "settings") {
+        this.db
+            .get(domain)
+            .assign({ [name]: value })
+            .write();
+    }
+
+    getSettings(name, domain = "settings") {
+        return this.db
+            .get(domain)
+            .get(name)
+            .value();
+    }
 }
 
 export default API;

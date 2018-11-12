@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import NoteList from "../notelist/NoteList";
 import NoteEditor from "../noteeditor/NoteEditor";
 import NoteViewer from "../noteviewer/NoteViewer";
+import API from "../../api/API";
 
 import * as Global from "../../constants";
 import "./NoteContainer.scss";
@@ -12,6 +13,7 @@ class NoteContainer extends Component {
         this.state = {
             openNote: null
         };
+        this.api = new API();
     }
 
     render() {
@@ -38,7 +40,16 @@ class NoteContainer extends Component {
         );
     }
 
+    componentDidMount() {
+        const lastId = this.api.getSettings("lastOpenNote", "user_settings");
+        const id = typeof lastId === "undefined" ? null : lastId;
+        this.setState({
+            openNote: id
+        });
+    }
+
     openNote = id => {
+        this.api.updateSettings("lastOpenNote", id, "user_settings");
         this.setState({
             openNote: id
         });
