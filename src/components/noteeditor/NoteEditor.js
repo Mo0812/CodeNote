@@ -1,53 +1,58 @@
 import React, { Component } from "react";
-import CodeMirror from "codemirror";
-import "codemirror/lib/codemirror.css";
-import "codemirror/mode/markdown/markdown";
-import "codemirror/theme/darcula.css";
-import PubSub from "pubsub-js";
+import { H1, EditableText } from "@blueprintjs/core";
 import API from "../../api/API";
+import NoteMDEditor from "./NoteMDEditor";
+
+import "./NoteEditor.scss";
 
 class NoteEditor extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            note: null
+        };
         this.api = new API();
     }
 
     render() {
-        return (
-            <section className="note-editor">
-                <textarea id="edit-area" />
-            </section>
-        );
-    }
-
-    componentDidUpdate() {
-        const note = this.api.getNote(this.props.contentId);
-        this.setContent(note);
-    }
-
-    componentDidMount() {
-        const textarea = document.querySelector("#edit-area");
-        this.mdEditor = CodeMirror.fromTextArea(textarea, {
-            mode: "markdown",
-            theme: "darcula"
-        });
-
-        this.mdEditor.on("change", editor => {
-            const newValue = editor.getValue();
-            this.changeContent(newValue);
-        });
-    }
-
-    setContent(note) {
-        this.currentNote = note;
-        if (typeof note !== "undefined") {
-            this.mdEditor.setValue(note.content);
+        const note = this.state.note;
+        if (note !== null) {
+            return (
+                <section className="note-editor-container">
+                    <header>
+                        <H1>
+                            <EditableText
+                                value={note.title}
+                                onChange={this.onChange("title")}
+                            />
+                        </H1>
+                    </header>
+                    <NoteMDEditor
+                        pubSubQueue={this.props.pubSubQueue}
+                        note={note}
+                    />
+                </section>
+            );
+        } else {
+            return "Nix";
         }
     }
 
-    changeContent = newValue => {
-        this.api.updateNote(this.props.contentId, newValue);
-        PubSub.publish(this.props.pubSubQueue, newValue);
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.contentId !== this.props.contentId) {
+            const note = this.api.getNote(this.props.contentId);
+            this.setState({
+                note: note
+            });
+        }
+    }
+
+    onChange = attribute => data => {
+        const note = this.state.note;
+        note[attribute] = data;
+        this.setState({
+            note: note
+        });
     };
 }
 

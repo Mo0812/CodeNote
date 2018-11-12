@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import NoteList from "../notelist/NoteList";
 import NoteEditor from "../noteeditor/NoteEditor";
 import NoteViewer from "../noteviewer/NoteViewer";
-import "./NoteContainer.css";
+import "./NoteContainer.scss";
 
 const MARKDOWN_CHANGE_QUEUE = "mdchange";
 

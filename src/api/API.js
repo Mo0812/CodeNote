@@ -18,11 +18,13 @@ class API {
             .value();
     }
 
-    updateNote(id, content) {
+    updateNote(note, content) {
         this.db
             .get("notes")
-            .find({ id: id })
-            .assign({ content: content })
+            .find({ id: note.id })
+            .assign({
+                content: content
+            })
             .write();
     }
 

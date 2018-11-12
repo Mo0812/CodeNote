@@ -6,7 +6,7 @@ class NoteViewer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            rawContent: null
+            note: null
         };
         this.converter = new showdown.Converter();
     }
@@ -14,7 +14,7 @@ class NoteViewer extends Component {
     componentDidMount() {
         this.token = PubSub.subscribe(this.props.pubSubQueue, (msg, data) => {
             this.setState({
-                rawContent: data
+                note: data
             });
         });
     }
@@ -24,9 +24,9 @@ class NoteViewer extends Component {
     }
 
     render() {
-        const rawContent = this.state.rawContent;
+        const note = this.state.note;
         const parsedContent = this.converter.makeHtml(
-            rawContent === null ? "" : rawContent
+            note === null ? "" : note.content
         );
         return (
             <section

@@ -17,17 +17,13 @@
     grid-template-columns: auto;
 }
 
-.note-editor {
+.note-editor-container {
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
 
     overflow: scroll;
     max-height: 100%;
-}
-
-.note-editor > .CodeMirror {
-    height: 100%;
 }
 
 .note-viewer {

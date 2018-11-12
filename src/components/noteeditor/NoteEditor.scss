@@ -1,0 +1,17 @@
+.note-editor-container {
+    display: grid;
+    grid-template-rows: 50px auto;
+    grid-template-columns: auto;
+
+    & > .note-editor-header {
+        overflow: auto;
+    }
+
+    & > .note-md-editor {
+        overflow: auto;
+        height: 100%;
+        & > .CodeMirror {
+            height: 100%;
+        }
+    }
+}

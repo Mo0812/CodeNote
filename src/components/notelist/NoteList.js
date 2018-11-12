@@ -14,7 +14,6 @@ class NoteList extends Component {
     }
 
     render() {
-        console.log(this.state.notes);
         return (
             <aside className="note-list-container">
                 <header className="note-list-header">
