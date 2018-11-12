@@ -28,7 +28,8 @@ class NoteMDEditor extends Component {
         const textarea = document.querySelector("#edit-area");
         this.mdEditor = CodeMirror.fromTextArea(textarea, {
             mode: "markdown",
-            theme: "darcula"
+            theme: "darcula",
+            lineWrapping: true
         });
 
         this.setContent();

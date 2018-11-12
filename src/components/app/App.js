@@ -20,6 +20,7 @@ class App extends Component {
                     onViewChange={this.onViewChange}
                 />
                 <NoteContainer viewMode={this.state.viewMode} />
+                <footer className="statusbar" />
             </main>
         );
     }
