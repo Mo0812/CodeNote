@@ -11,21 +11,10 @@ class Menu extends Component {
                     <Navbar.Group align={Alignment.LEFT}>
                         <Navbar.Heading>CodeNotes</Navbar.Heading>
                         <Navbar.Divider />
-                        <Button
-                            className="bp3-minimal"
-                            icon="home"
-                            text="Home"
-                        />
-                        <Button
-                            className="bp3-minimal"
-                            icon="document"
-                            text="Files"
-                        />
                     </Navbar.Group>
                     <Navbar.Group align={Alignment.RIGHT}>
                         <ButtonGroup>
                             <Button
-                                className="bp3-minimal"
                                 icon="code"
                                 onClick={this.onViewAction(Global.CODE_VIEW)}
                                 active={
@@ -35,7 +24,6 @@ class Menu extends Component {
                                 }
                             />
                             <Button
-                                className="bp3-minimal"
                                 icon="grid-view"
                                 onClick={this.onViewAction(
                                     Global.CODE_PREVIEW_VIEW
@@ -48,7 +36,6 @@ class Menu extends Component {
                                 }
                             />
                             <Button
-                                className="bp3-minimal"
                                 icon="eye-open"
                                 onClick={this.onViewAction(Global.PREVIEW_VIEW)}
                                 active={
@@ -58,6 +45,9 @@ class Menu extends Component {
                                 }
                             />
                         </ButtonGroup>
+                        <Navbar.Divider />
+                        <Button minimal={true} icon="user" />
+                        <Button minimal={true} icon="settings" />
                     </Navbar.Group>
                 </Navbar>
             </header>
