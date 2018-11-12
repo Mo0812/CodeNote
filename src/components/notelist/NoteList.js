@@ -43,7 +43,6 @@ class NoteList extends Component {
             this.setState({
                 notes: updatedNotes
             });
-            //console.log(this.state.notes);
         });
     }
 
@@ -57,7 +56,6 @@ class NoteList extends Component {
 
     getNoteList() {
         const notes = this.api.getNotes();
-        console.log(notes);
         this.setState({
             notes: notes
         });

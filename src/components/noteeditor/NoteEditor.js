@@ -39,8 +39,8 @@ class NoteEditor extends Component {
     }
 
     setContent(note) {
+        this.currentNote = note;
         if (typeof note !== "undefined") {
-            this.setContentFlag = true;
             this.mdEditor.setValue(note.content);
         }
     }
