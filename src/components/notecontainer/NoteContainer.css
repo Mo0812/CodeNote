@@ -1,7 +1,7 @@
 .note-container {
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 25% auto auto;
+    grid-template-columns: 25% 1fr 1fr;
 }
 
 .note-list {
