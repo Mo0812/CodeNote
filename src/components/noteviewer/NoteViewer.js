@@ -1,31 +1,39 @@
 import React, { Component } from "react";
 import showdown from "showdown";
-import API from "../../api/API";
+import PubSub from "pubsub-js";
 
 class NoteViewer extends Component {
     constructor(props) {
         super(props);
-        this.api = new API();
+        this.state = {
+            rawContent: null
+        };
         this.converter = new showdown.Converter();
     }
 
+    componentDidMount() {
+        this.token = PubSub.subscribe(this.props.pubSubQueue, (msg, data) => {
+            this.setState({
+                rawContent: data
+            });
+        });
+    }
+
+    componentWillUnmount() {
+        PubSub.unsubscribe(this.token);
+    }
+
     render() {
-        const parsedContent = this.getContent(this.props.contentId);
+        const rawContent = this.state.rawContent;
+        const parsedContent = this.converter.makeHtml(
+            rawContent === null ? "" : rawContent
+        );
         return (
             <section
                 className="note-viewer"
                 dangerouslySetInnerHTML={{ __html: parsedContent }}
             />
         );
-    }
-
-    getContent(id) {
-        const note = this.api.getNote(this.props.contentId);
-        if (typeof note !== "undefined") {
-            return this.converter.makeHtml(note.content);
-        } else {
-            return "";
-        }
     }
 }
 

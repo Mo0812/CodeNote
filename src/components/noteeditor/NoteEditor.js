@@ -3,6 +3,7 @@ import CodeMirror from "codemirror";
 import "codemirror/lib/codemirror.css";
 import "codemirror/mode/markdown/markdown";
 import "codemirror/theme/darcula.css";
+import PubSub from "pubsub-js";
 import API from "../../api/API";
 
 class NoteEditor extends Component {
@@ -45,8 +46,8 @@ class NoteEditor extends Component {
     }
 
     changeContent = newValue => {
-        console.log(this.props.contentId);
         this.api.updateNote(this.props.contentId, newValue);
+        PubSub.publish(this.props.pubSubQueue, newValue);
     };
 }
 

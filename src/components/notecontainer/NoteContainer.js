@@ -5,6 +5,8 @@ import NoteEditor from "../noteeditor/NoteEditor";
 import NoteViewer from "../noteviewer/NoteViewer";
 import "./NoteContainer.css";
 
+const MARKDOWN_CHANGE_QUEUE = "mdchange";
+
 class NoteContainer extends Component {
     constructor(props) {
         super(props);
@@ -23,10 +25,10 @@ class NoteContainer extends Component {
                     onOpenNote={id => this.openNote(id)}
                 />
                 <NoteEditor
+                    pubSubQueue={MARKDOWN_CHANGE_QUEUE}
                     contentId={this.state.openNote}
-                    onChange={this.updateResource}
                 />
-                <NoteViewer contentId={this.state.openNote} />
+                <NoteViewer pubSubQueue={MARKDOWN_CHANGE_QUEUE} />
             </section>
         );
     }
@@ -42,12 +44,6 @@ class NoteContainer extends Component {
         this.setState({
             openNote: id
         });
-    };
-
-    updateResource = () => {
-        /*this.setState({
-            openNote: this.state.openNote
-        });*/
     };
 }
 
