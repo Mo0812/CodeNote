@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import showdown from "showdown";
 import PubSub from "pubsub-js";
+import { H1 } from "@blueprintjs/core";
+
+import "./NoteViewer.scss";
 
 class NoteViewer extends Component {
     constructor(props) {
@@ -25,15 +28,23 @@ class NoteViewer extends Component {
 
     render() {
         const note = this.state.note;
-        const parsedContent = this.converter.makeHtml(
-            note === null ? "" : note.content
-        );
-        return (
-            <section
-                className="note-viewer"
-                dangerouslySetInnerHTML={{ __html: parsedContent }}
-            />
-        );
+        if (note !== null) {
+            return (
+                <section className="note-viewer-container">
+                    <header className="note-viewer-title">
+                        <H1>{note.title}</H1>
+                    </header>
+                    <section
+                        className="note-viewer"
+                        dangerouslySetInnerHTML={{
+                            __html: this.converter.makeHtml(note.content)
+                        }}
+                    />
+                </section>
+            );
+        } else {
+            return <section className="note-viewer-container" />;
+        }
     }
 }
 
