@@ -18,8 +18,9 @@ class NoteEditor extends Component {
         const note = this.state.note;
         if (note !== null) {
             return (
-                <section className="note-editor-container">
-                    <header class="note-editor-toolbar" />
+                <section
+                    className={"note-editor-container " + this.props.viewMode}
+                >
                     <div className="note-editor-title">
                         <H1>
                             <EditableText
@@ -36,7 +37,9 @@ class NoteEditor extends Component {
             );
         } else {
             return (
-                <section className="note-editor-container">
+                <section
+                    className={"note-editor-container " + this.props.viewMode}
+                >
                     <Callout
                         title="No note selected"
                         className="no-note-selected"

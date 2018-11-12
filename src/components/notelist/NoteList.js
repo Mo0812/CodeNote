@@ -4,6 +4,8 @@ import { ButtonGroup, Button } from "@blueprintjs/core";
 import NoteListElement from "./NoteListElement";
 import API from "../../api/API";
 
+import "./NoteList.scss";
+
 class NoteList extends Component {
     constructor(props) {
         super(props);

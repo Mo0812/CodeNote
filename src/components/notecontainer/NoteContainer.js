@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import NoteList from "../notelist/NoteList";
 import NoteEditor from "../noteeditor/NoteEditor";
 import NoteViewer from "../noteviewer/NoteViewer";
-import "./NoteContainer.scss";
 
-const MARKDOWN_CHANGE_QUEUE = "mdchange";
+import * as Global from "../../constants";
+import "./NoteContainer.scss";
 
 class NoteContainer extends Component {
     constructor(props) {
@@ -18,15 +18,22 @@ class NoteContainer extends Component {
         return (
             <section className="note-container">
                 <NoteList
-                    pubSubQueue={MARKDOWN_CHANGE_QUEUE}
+                    pubSubQueue={Global.MARKDOWN_CHANGE_QUEUE}
                     activeId={this.state.openNote}
                     onOpenNote={id => this.openNote(id)}
                 />
-                <NoteEditor
-                    pubSubQueue={MARKDOWN_CHANGE_QUEUE}
-                    contentId={this.state.openNote}
-                />
-                <NoteViewer pubSubQueue={MARKDOWN_CHANGE_QUEUE} />
+                {(this.props.viewMode === Global.CODE_PREVIEW_VIEW ||
+                    this.props.viewMode === Global.CODE_VIEW) && (
+                    <NoteEditor
+                        pubSubQueue={Global.MARKDOWN_CHANGE_QUEUE}
+                        contentId={this.state.openNote}
+                        viewMode={this.props.viewMode}
+                    />
+                )}
+                {(this.props.viewMode === Global.CODE_PREVIEW_VIEW ||
+                    this.props.viewMode === Global.PREVIEW_VIEW) && (
+                    <NoteViewer pubSubQueue={Global.MARKDOWN_CHANGE_QUEUE} />
+                )}
             </section>
         );
     }

@@ -1,5 +1,11 @@
 @import "../../variables.scss";
 
+.note-list-container {
+    display: grid;
+    grid-template-rows: 75px auto;
+    grid-template-columns: auto;
+}
+
 .note-list-header {
     overflow: auto;
 }

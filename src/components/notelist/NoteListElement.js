@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-import "./NoteListElement.scss";
-
 class NoteListElement extends Component {
     render() {
         return (
