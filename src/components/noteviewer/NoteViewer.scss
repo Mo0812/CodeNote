@@ -1,0 +1,19 @@
+.note-viewer-container {
+    display: grid;
+    grid-template-rows: 50px 75px auto;
+    grid-template-columns: auto;
+
+    & > * {
+        padding: 0 15px;
+    }
+
+    & > .note-viewer-title {
+        overflow: auto;
+        padding: 10px 15px;
+    }
+
+    & > .note-viewer {
+        overflow: auto;
+        height: 100%;
+    }
+}

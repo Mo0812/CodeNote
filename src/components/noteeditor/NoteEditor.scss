@@ -1,10 +1,22 @@
+@import "../../variables.scss";
+
 .note-editor-container {
     display: grid;
-    grid-template-rows: 50px auto;
+    grid-template-rows: 50px 75px auto;
     grid-template-columns: auto;
+
+    & > * {
+        padding: 0 15px;
+    }
 
     & > .note-editor-title {
         overflow: auto;
+        background-color: $editable-background-color;
+        padding: 10px 15px;
+
+        .bp3-editable-text {
+            width: 100%;
+        }
     }
 
     & > .note-md-editor {
@@ -12,11 +24,15 @@
         height: 100%;
         & > .CodeMirror {
             height: 100%;
+            margin: 0 -15px;
+            padding: 5px 15px;
+            border-radius: 4px;
         }
     }
 
     .no-note-selected {
         grid-row-start: 2;
+        grid-row-end: 4;
         text-align: center;
         padding-top: 4rem;
     }

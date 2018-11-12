@@ -31,9 +31,10 @@ class NoteViewer extends Component {
         if (note !== null) {
             return (
                 <section className="note-viewer-container">
-                    <header className="note-viewer-title">
+                    <header className="note-viewer-toolbar" />
+                    <div className="note-viewer-title">
                         <H1>{note.title}</H1>
-                    </header>
+                    </div>
                     <section
                         className="note-viewer"
                         dangerouslySetInnerHTML={{

@@ -19,14 +19,15 @@ class NoteEditor extends Component {
         if (note !== null) {
             return (
                 <section className="note-editor-container">
-                    <header className="note-editor-title">
+                    <header class="note-editor-toolbar" />
+                    <div className="note-editor-title">
                         <H1>
                             <EditableText
                                 value={note.title}
                                 onChange={this.onChange("title")}
                             />
                         </H1>
-                    </header>
+                    </div>
                     <NoteMDEditor
                         pubSubQueue={this.props.pubSubQueue}
                         note={note}
