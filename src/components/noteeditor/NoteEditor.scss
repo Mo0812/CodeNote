@@ -3,7 +3,7 @@
     grid-template-rows: 50px auto;
     grid-template-columns: auto;
 
-    & > .note-editor-header {
+    & > .note-editor-title {
         overflow: auto;
     }
 
@@ -13,5 +13,11 @@
         & > .CodeMirror {
             height: 100%;
         }
+    }
+
+    .no-note-selected {
+        grid-row-start: 2;
+        text-align: center;
+        padding-top: 4rem;
     }
 }

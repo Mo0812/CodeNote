@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { H1, EditableText } from "@blueprintjs/core";
+import { H1, EditableText, Callout, Code } from "@blueprintjs/core";
 import API from "../../api/API";
 import NoteMDEditor from "./NoteMDEditor";
 
@@ -19,7 +19,7 @@ class NoteEditor extends Component {
         if (note !== null) {
             return (
                 <section className="note-editor-container">
-                    <header>
+                    <header className="note-editor-title">
                         <H1>
                             <EditableText
                                 value={note.title}
@@ -34,7 +34,16 @@ class NoteEditor extends Component {
                 </section>
             );
         } else {
-            return "Nix";
+            return (
+                <section className="note-editor-container">
+                    <Callout
+                        title="No note selected"
+                        className="no-note-selected"
+                    >
+                        Please choose a note on the left side to proceed.
+                    </Callout>
+                </section>
+            );
         }
     }
 
