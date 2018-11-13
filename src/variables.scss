@@ -10,9 +10,9 @@ $toolbar-color: #30404d;
 $box-padding: 15px;
 
 %not-selectable {
-    /*-webkit-user-select: none;
+    -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     -o-user-select: none;
-    user-select: none;*/
+    user-select: none;
 }

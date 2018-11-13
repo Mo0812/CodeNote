@@ -14,12 +14,12 @@
     {
       "id": "kPlEUXi5Em",
       "title": "Note 3",
-      "content": "# Test 3\nLorem ipsum dolor sit amet\n* consetetur sadipscing\n* elitr, sed diam nonumy\n* eirmod tempor invidunt\nut labore et dolore\nmagna aliquyam erat\n**sed diam voluptua.**"
+      "content": "# Test 3\nLorem ipsum dolor sit amet\n* consetetur sadipscing\n* elitr, sed diam nonumy\n* eirmod tempor invidunt\nut labore et dolore\nmagna aliquyam erat\n**sed diam voluptua.**\n\n* [ ] Bullet 1\n* [ ] Bullet 2\n\n:smile:\n\n| col 1 | col 2 |\n| ----- | ----- |\n| val 1 | val 2 |\n\n\n~~strikethrough~~"
     },
     {
       "id": "MMG0D4Owa",
       "title": "Readme.md",
-      "content": "# CodeNote\n\n> This is a side project of mine, trying to explore the JS world even further using Electron and React.\n\nCodeNote provides a markdown based note collection with:\n\n-   markdown live preview\n-   saving changes instantly to a json based [lowdb](https://github.com/typicode/lowdb)\n-   multiple notes\n-   markdown highlighting and editing features\n\nThis project is in its early stages and still under development.\n\n## Install\n\n1. `git clone` or _download_ the project\n2. `cd CodeNotes` to go into the projects root folder\n3. run `npm install` to install all dependencies\n4. To run the app just type `npm run dev`\n"
+      "content": "# CodeNote\n\n> This is a side project of mine, trying to explore the JS world even further using Electron and React.\n\nCodeNote provides a markdown based note collection with:\n\n-   markdown live preview\n-   saving changes instantly to a json based [lowdb](https://github.com/typicode/lowdb)\n-   multiple notes\n-   markdown highlighting and editing features\n\nThis project is in its early stages and still under development.\n\n## Install\n\n1. `git clone` or _download_ the project\n2. `cd CodeNotes` to go into the projects root folder\n3. run `npm install` to install all dependencies\n4. To run the app just type `npm run dev`"
     }
   ],
   "user": {},

@@ -4,6 +4,7 @@ import PubSub from "pubsub-js";
 import { H1 } from "@blueprintjs/core";
 
 import "./NoteViewer.scss";
+import "github-markdown-css/github-markdown.css";
 
 class NoteViewer extends Component {
     constructor(props) {
@@ -11,6 +12,14 @@ class NoteViewer extends Component {
         this.state = {
             note: null
         };
+        showdown.setFlavor("github");
+        showdown.setOption("emoji", true);
+        showdown.setOption("tasklists", true);
+        showdown.setOption("smoothLivePreview", true);
+        showdown.setOption("ghCodeBlocks", true);
+        showdown.setOption("tables", true);
+        showdown.setOption("strikethrough", true);
+
         this.converter = new showdown.Converter();
     }
 
@@ -35,7 +44,7 @@ class NoteViewer extends Component {
                         <H1>{note.title}</H1>
                     </div>
                     <section
-                        className="note-viewer"
+                        className="note-viewer markdown-body"
                         dangerouslySetInnerHTML={{
                             __html: this.converter.makeHtml(note.content)
                         }}

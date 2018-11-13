@@ -1,3 +1,9 @@
+$md-preview-link-color: #61afef;
+$md-preview-code-color: #ebcc43;
+$md-preview-highlight-background-color: rgba(27, 31, 35, 0.3);
+$md-preview-highlight-border-color: #61afef;
+$md-preview-border-color: rgb(161, 161, 161);
+
 .note-viewer-container {
     display: grid;
     grid-template-rows: 75px auto;
@@ -15,5 +21,35 @@
     & > .note-viewer {
         overflow: auto;
         height: 100%;
+        color: white;
+
+        a {
+            color: $md-preview-link-color;
+        }
+
+        code {
+            color: $md-preview-code-color;
+            background-color: $md-preview-highlight-background-color;
+        }
+
+        blockquote {
+            border-left: 0.25em solid $md-preview-highlight-border-color;
+            background-color: $md-preview-highlight-background-color;
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1rem;
+        }
+
+        h1,
+        h2 {
+            border-bottom: 1px solid $md-preview-border-color;
+        }
+        table > thead > tr > th {
+            border-color: $md-preview-border-color;
+        }
+
+        hr,
+        table > tbody > tr + tr > td {
+            border-color: $md-preview-border-color;
+        }
     }
 }
