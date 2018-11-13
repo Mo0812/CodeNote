@@ -2,29 +2,29 @@
   "notes": [
     {
       "id": "p_VkNAs3l",
-      "title": "Notiz 1",
+      "title": "Note 1",
       "content": "# Test 1\nLorem ipsum dolor sit amet\n* consetetur sadipscing\n* elitr, sed diam nonumy\n* eirmod tempor invidunt\nut labore et dolore\nmagna aliquyam erat\n**sed diam voluptua.**\n\nIch bin so froh das alles *gut* funktioniert! Live **Updates** sind super cool <3\n\n* Test\n* Lalala\n* [Links kann es auch geben](http://google.de)"
     },
     {
       "id": "RKWBrYXIHh",
-      "title": "Notiz 2",
+      "title": "Note 2",
       "content": "# Test 2\nLorem ipsum dolor sit amet\n* consetetur sadipscing\n* elitr, sed diam nonumy \n* eirmod tempor invidunt\nut labore et dolore\nmagna aliquyam erat\n**sed diam voluptua.**\n\nIch bin so froh das alles *gut* funktioniert! Live **Updates** sind super cool <3\n\n* Test\n* Lalala\n* [Links kann es auch geben](http://google.de)",
       "attribute": "Notiz 2abcdcde2111"
     },
     {
       "id": "kPlEUXi5Em",
-      "title": "Notiz 3",
+      "title": "Note 3",
       "content": "# Test 3\nLorem ipsum dolor sit amet\n* consetetur sadipscing\n* elitr, sed diam nonumy\n* eirmod tempor invidunt\nut labore et dolore\nmagna aliquyam erat\n**sed diam voluptua.**"
     },
     {
       "id": "MMG0D4Owa",
-      "title": "New Note",
-      "content": "Was geht ab?"
+      "title": "Readme.md",
+      "content": "# CodeNote\n\n> This is a side project of mine, trying to explore the JS world even further using Electron and React.\n\nCodeNote provides a markdown based note collection with:\n\n-   markdown live preview\n-   saving changes instantly to a json based [lowdb](https://github.com/typicode/lowdb)\n-   multiple notes\n-   markdown highlighting and editing features\n\nThis project is in its early stages and still under development.\n\n## Install\n\n1. `git clone` or _download_ the project\n2. `cd CodeNotes` to go into the projects root folder\n3. run `npm install` to install all dependencies\n4. To run the app just type `npm run dev`\n"
     }
   ],
   "user": {},
   "settings": {},
   "user_settings": {
-    "lastOpenNote": "p_VkNAs3l"
+    "lastOpenNote": "MMG0D4Owa"
   }
 }
