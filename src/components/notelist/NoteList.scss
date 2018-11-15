@@ -19,8 +19,10 @@
     border-bottom: 1px solid $border-color;
     height: 4rem;
     padding: $box-padding;
+    padding-right: 22.5px;
     overflow: hidden;
     cursor: pointer;
+    position: relative;
 
     &:hover {
         background-color: $box-background-highlight;
@@ -40,5 +42,15 @@
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
+    }
+
+    & > .action-menu {
+        position: absolute;
+        right: 7.5px;
+        bottom: 15px;
+
+        .action-button {
+            transform: rotate(90deg);
+        }
     }
 }

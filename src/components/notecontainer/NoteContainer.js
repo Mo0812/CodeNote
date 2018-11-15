@@ -49,10 +49,17 @@ class NoteContainer extends Component {
     }
 
     openNote = id => {
-        this.api.updateSettings("lastOpenNote", id, "user_settings");
-        this.setState({
-            openNote: id
-        });
+        if (this.api.hasNote(id)) {
+            this.api.updateSettings("lastOpenNote", id, "user_settings");
+            this.setState({
+                openNote: id
+            });
+        } else {
+            this.api.emptySettings("lastOpenNote", "user_settings");
+            this.setState({
+                openNote: null
+            });
+        }
     };
 }
 

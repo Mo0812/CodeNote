@@ -34,6 +34,9 @@ class NoteList extends Component {
                                 title={note.title}
                                 excerpt={note.content}
                                 onClick={this.noteClicked(note.id)}
+                                onContextMenuAction={action =>
+                                    this.contextMenuAction(action)
+                                }
                             />
                         );
                     })}
@@ -60,6 +63,20 @@ class NoteList extends Component {
 
     noteClicked = id => () => {
         this.props.onOpenNote(id);
+    };
+
+    contextMenuAction = action => {
+        switch (action) {
+            case "export":
+                console.log("export");
+                break;
+            case "remove":
+                console.log("remove");
+                this.api.removeNote(this.props.activeId);
+                this.props.onOpenNote(null);
+                break;
+            default:
+        }
     };
 
     getNoteList() {

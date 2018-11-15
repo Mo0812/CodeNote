@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { H1, EditableText, Callout } from "@blueprintjs/core";
+import PubSub from "pubsub-js";
 import API from "../../api/API";
 import NoteMDEditor from "./NoteMDEditor";
 
@@ -16,7 +17,7 @@ class NoteEditor extends Component {
 
     render() {
         const note = this.state.note;
-        if (note !== null) {
+        if (note !== null && typeof note !== "undefined") {
             return (
                 <section
                     className={"note-editor-container " + this.props.viewMode}
@@ -57,6 +58,7 @@ class NoteEditor extends Component {
             this.setState({
                 note: note
             });
+            PubSub.publish(this.props.pubSubQueue, note);
         }
     }
 

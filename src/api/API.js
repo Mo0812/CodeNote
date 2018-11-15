@@ -11,6 +11,10 @@ class API {
         return this.db.get("notes").value();
     }
 
+    hasNote(id) {
+        return typeof this.getNote(id) !== "undefined";
+    }
+
     getNote(id) {
         return this.db
             .get("notes")
@@ -38,6 +42,13 @@ class API {
         return newId;
     }
 
+    removeNote(id) {
+        this.db
+            .get("notes")
+            .remove({ id: id })
+            .write();
+    }
+
     updateSettings(name, value, domain = "settings") {
         this.db
             .get(domain)
@@ -50,6 +61,13 @@ class API {
             .get(domain)
             .get(name)
             .value();
+    }
+
+    emptySettings(name, domain = "settings") {
+        return this.db
+            .get(domain)
+            .unset(name)
+            .write();
     }
 }
 
