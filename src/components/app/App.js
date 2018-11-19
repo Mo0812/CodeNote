@@ -7,12 +7,16 @@ import User from "../user/User";
 import "./App.scss";
 
 import * as Global from "../../constants";
+import CommandPalette from "../commandpalette/CommandPalette";
+
+const { ipcRenderer } = window.require("electron");
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            viewMode: Global.CODE_PREVIEW_VIEW
+            viewMode: Global.CODE_PREVIEW_VIEW,
+            commandPalette: false
         };
     }
     render() {
@@ -22,6 +26,7 @@ class App extends Component {
                     viewMode={this.state.viewMode}
                     onViewChange={this.onViewChange}
                 />
+                <CommandPalette active={this.state.commandPalette} />
                 <Switch>
                     <Route
                         exact
@@ -39,6 +44,23 @@ class App extends Component {
                 <footer className="statusbar" />
             </main>
         );
+    }
+
+    componentDidMount() {
+        ipcRenderer.on("command-palette", () => {
+            this.setState({
+                commandPalette: true
+            });
+        });
+        ipcRenderer.on("esc", () => {
+            var cp = this.state.commandPalette;
+            if (cp) {
+                cp = !cp;
+            }
+            this.setState({
+                commandPalette: cp
+            });
+        });
     }
 
     onViewChange = option => {

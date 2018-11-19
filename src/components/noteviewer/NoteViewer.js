@@ -37,7 +37,6 @@ class NoteViewer extends Component {
 
     render() {
         const note = this.state.note;
-        console.log(note);
         if (note !== null && typeof note !== "undefined") {
             return (
                 <section className="note-viewer-container">

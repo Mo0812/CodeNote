@@ -1,5 +1,5 @@
 // Modules to control application life and create native browser window
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, globalShortcut } = require("electron");
 
 const path = require("path");
 const url = require("url");
@@ -34,6 +34,14 @@ function createWindow() {
         // in an array if your app supports multi windows, this is the time
         // when you should delete the corresponding element.
         mainWindow = null;
+    });
+
+    // Shortcuts
+    globalShortcut.register("CommandOrControl+Shift+P", function() {
+        mainWindow.webContents.send("command-palette");
+    });
+    globalShortcut.register("Esc", function() {
+        mainWindow.webContents.send("esc");
     });
 }
 
